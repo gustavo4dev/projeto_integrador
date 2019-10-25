@@ -1,0 +1,98 @@
+p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+}
+
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+.list-inline {
+    max-width: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+.call-to-action-widget {
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.fb-bg {
+background-color: #3B5998;
+}
+.tw-bg {
+background-color: #55ACEE;
+}
+.gplus-bg {
+background-color: #DD4B39;
+}
+
+footer.page-footer a {
+line-height: 25px;
+}
+
+footer.page-footer a {
+color: #fff;
+font-size: 15px;
+}
+
+.page-content {
+    margin-top: 40px;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 400px;
+    margin-bottom: 50px;
+}
+
+.item{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.call-to-action-widget {
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.fb-bg {
+background-color: #3B5998;
+}
+.tw-bg {
+background-color: #55ACEE;
+}
+.gplus-bg {
+background-color: #DD4B39;
+}
+
+footer.page-footer a {
+line-height: 25px;
+}
+
+footer.page-footer a {
+color: #fff;
+font-size: 15px;
+}

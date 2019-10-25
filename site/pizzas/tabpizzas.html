@@ -1,0 +1,118 @@
+<head>
+    <link href="tabpizza.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+    <form id="frm-example" action="/path/to/your/script" method="POST">
+        <table id="example" class="display select" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Extn.</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+
+        </table>
+        <hr>
+
+
+        <p><button>Submit</button></p>
+
+        <b>Data submitted to the server:</b><br>
+        <pre id="example-console">
+		</pre>
+    </form>
+
+
+    <script type='text/javascript'>
+        //<![CDATA[
+
+        $(document).ready(function() {
+            // Array holding selected row IDs
+            var rows_selected = [];
+            var table = $('#example').DataTable({
+                'searching': false,
+                'paging': false,
+                'ordering': false,
+                'ajax': 'https://api.myjson.com/bins/1us28',
+                'columnDefs': [{
+                    'targets': 0,
+                    'searchable': false,
+                    'orderable': false,
+                    'width': '1%',
+                    'className': 'dt-body-center',
+                    'render': function(data, type, full, meta) {
+                        return '<input type="checkbox">';
+                    }
+                }],
+                'rowCallback': function(row, data, dataIndex) {
+                    // Get row ID
+                    var rowId = data[0];
+
+                    // If row ID is in the list of selected row IDs
+                    if ($.inArray(rowId, rows_selected) !== -1) {
+                        $(row).find('input[type="checkbox"]').prop('checked', true);
+                        $(row).addClass('selected');
+                    } else {
+                        $(row).find('input[type="checkbox"]').prop('checked', false);
+                        $(row).removeClass('selected');
+                    }
+                }
+            });
+
+            // Handle click on checkbox
+            $('#example tbody').on('click', 'input[type="checkbox"]', function(e) {
+                var $row = $(this).closest('tr');
+
+                // Get row data
+                var data = table.row($row).data();
+
+                // Get row ID
+                var rowId = data[0];
+
+                // Determine whether row ID is in the list of selected row IDs 
+                var index = $.inArray(rowId, rows_selected);
+
+                // If checkbox is checked and row ID is not in list of selected row IDs
+                if (this.checked && index === -1) {
+                    rows_selected.push(rowId);
+
+                    // Otherwise, if checkbox is not checked and row ID is in list of selected row IDs
+                } else if (!this.checked && index !== -1) {
+                    rows_selected.splice(index, 1);
+                }
+
+                if (this.checked && rows_selected.length <= 3) {
+                    $row.addClass('selected');
+                } else if (!this.checked && rows_selected.length <= 3) {
+                    $row.removeClass('selected');
+                }
+
+                // Solução do Professor
+                if (rows_selected.length == 3) {
+                    $('#example tbody input[type="checkbox"]:not(:checked)').prop("disabled", true);
+                } else {
+                    $('#example tbody input[type="checkbox"]').prop("disabled", false);
+                }
+
+                // Prevent click event from propagating to parent
+                e.stopPropagation();
+            });
+
+            // Handle form submission event 
+            $('#frm-example').on('submit', function(e) {
+                alert(rows_selected);
+                e.preventDefault();
+            });
+        });
+        //]]>
+    </script>
+</body>

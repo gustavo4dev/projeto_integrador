@@ -1,0 +1,194 @@
+/* YOUR CUSTOM STYLES */
+
+.form-control{
+    width: 75%;
+    padding: auto;
+}
+@media(min-width: 600px){
+    form-control{
+        width: 60%;
+    }
+}
+
+.md-form .prefix.active{
+    color: rgb(244, 67, 54);
+
+
+}
+
+
+
+.list-group-item, a {
+    color: rgb(244, 67, 54);
+}
+a:hover,a:focus{
+    color: rgb(250,128,114);
+}
+.danger-color-dark{
+    background-color: rgb(244, 67, 54)!important;
+}
+
+#cadastro-action{
+    text-align: center;
+}
+
+.form-control:focus,
+input[type=date]:focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]){
+    color: rgb(244, 67, 54);
+    border-color: rgb(244, 67, 54); 
+    border-bottom: 1px solid rgb(244, 67, 54);
+    box-shadow: 0 1px 0 0 rgb(244, 67, 54);
+}
+
+input[type=email]:focus:not([readonly])+label,
+input[type=password]:focus:not([readonly])+label{
+    color: rgb(244, 67, 54);
+}
+
+#carousel-example-2, #carousel-example-2 img{
+
+    width: 100%;
+    position: relative !important;
+}
+#carousel-example-2 img {
+
+    position:absolute;
+    top:50%;
+    margin-top:-35%;
+
+}
+
+.view{
+    height: 30em;
+}
+
+.col-md-4 > .card {
+    height: 22.5em;
+    width: 100%;
+    padding: auto;
+}
+
+.col-md-4 > .card > .img-fluid{
+    width: 100%;
+   height: 10em;
+}
+#btn-destaque{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 8%;
+    margin-left: 0;
+}
+
+
+@media(max-width:993px){
+    #carousel-example-2, #carousel-example-2 img{
+        vertical-align: middle;
+        width: 100%;
+        position: relative !important;
+    }
+    .view{
+        height: 25em;
+    }
+
+}
+@media(max-width:767px){
+    .view{
+        height: 22em;
+    }
+    .col-md-4 > .card{
+        height: 28em;
+    }
+
+    
+}
+
+@media(max-width:520px){
+    .view{
+        height: 19em;
+    }
+    .col-md-4 > .card > .img-fluid{
+        height: 16em;
+    }
+}
+@media(max-width:448px){
+    .view{
+        height: 15em;
+    }
+    .col-md-4 > .card > .img-fluid{
+        height: 12em;
+    }
+}
+
+@media(max-width:350px){
+    .view{
+        height: 12em;
+    }
+}
+
+@media (max-width: 991px){
+    .col-md-2 {
+        width: 100%;
+    }
+    #btn-destaque{
+        position: absolute;
+        bottom: 0;
+        padding: 8%;
+        margin-bottom: 8%;
+        margin-right: 8%;
+        margin-left: 0px;
+    }
+    .col-md-9{
+        width: 100%;
+    }
+    .col-md-4 > .card > .img-fluid{
+        height: 9em;
+    }
+
+}
+@media(max-width: 767px){
+    .col-md-9{
+        width: 100%;
+    }
+    #btn-destaque {
+        position: absolute;
+        bottom: 0;
+        padding: 3%;
+        margin-bottom: 3%;
+        margin-right: 8%;
+        margin-left: 0px;
+    }
+    .col-md-4 > .card > .img-fluid{
+        height: 18em;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .col-md-2 {
+        float: left;
+        width: 20%;
+    }
+    .col-md-4 > .card > .img-fluid{
+        height: 8em;
+    }
+}
+
+
+
+
+
+
+/*pagina de pizzas*/
+#img-pizza{
+    height: 65px;
+    width: 65px;
+    overflow: hidden;
+}
+
+#icone-cesta{
+    height: 55px;
+    width: 55px;
+    overflow: hidden;
+}
