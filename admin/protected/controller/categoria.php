@@ -18,10 +18,7 @@ class Categoria {
      * função para listagem de registros do bd
      */
     public function index() {
-        
-
         $dados = $this->model->buscarTodos();
-
         require SERVER_ROOT . 'admin/protected/view/categoria/listar.php';
     }
 

@@ -75,6 +75,10 @@ and open the template in the editor.
                     <span class="mdl-layout-title">Food Delivery</span>
                     <div class="mdl-layout-spacer"></div>
                     <!--itens menu-->
+
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                        <a class="mdl-navigation__link" href="index.php?ctrl=pedidocompra">Nova compra</a>
+                    </nav>
                     <nav class="mdl-navigation mdl-layout--large-screen-only">
                         <!-- botao para manutenções -->
                         <a href="#" id="demo-menu-lower-left-1"
